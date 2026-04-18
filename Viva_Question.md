@@ -1,3 +1,5 @@
+
+<!--UNIT-1-->
 <!-- EXPERIMENT 1  -->
 1. What is an ADT?
 An Abstract Data Type (ADT) is a logical model that defines the data and the operations that can be performed on it without specifying how they are implemented internally.
@@ -77,4 +79,135 @@ Worst Case: O(log n) – When the element is found at the last level or not pres
 
 3. Divide & Conquer meaning?
 Divide and Conquer is a strategy where a problem is divided into smaller subproblems, solved recursively, and then combined to form the final solution.
-Binary search is an example of this approach.
+Binary search is an example of this approach.   
+
+
+
+<!--UNIT-2-->
+<!--EXPERIMENT 1-->
+1. Why index access is O(1)?
+
+Because arrays store elements in contiguous memory, so the address of any element is calculated using:
+base_address + index × size → no traversal needed → constant time.
+
+2. Why insertion at start is O(n)?
+
+All elements must be shifted one position right, so time increases linearly with number of elements.
+
+3. Static vs Dynamic Arrays
+Static Array	Dynamic Array
+Fixed size	Resizable
+Faster	Flexible
+Memory allocated once	Resizes during runtime
+
+<!--EXPERIMENT 2-->
+1. Complexity of scanning a matrix?
+
+For matrix of size n × m → O(n × m)
+
+2. Real-world use of 2D arrays?
+Images (pixels)
+Game boards (chess, sudoku)
+Tables (Excel, databases)
+3. Memory layout idea (row-wise)
+
+Elements are stored row by row in memory.
+Example:
+
+[1 2 3
+ 4 5 6]
+
+Stored as: 1,2,3,4,5,6
+
+<!--EXPERIMENT 3-->
+1. What is amortized complexity?
+
+Average time per operation over many operations.
+Even if one operation is costly, overall average remains low.
+
+2. Why doubling helps?
+
+Doubling reduces number of resizes → total cost spread over many inserts → O(1) amortized
+
+3. Why pop-end is O(1)?
+
+Last element is removed directly → no shifting required.
+
+<!--EXPERIMENT 4-->
+1. Why search is O(n)?
+
+Need to traverse nodes one by one → no direct access like arrays.
+
+2. Why insert-at-head is O(1)?
+
+Only pointer change:
+
+new.next = head
+head = new
+
+No traversal needed.
+
+<!--EXPERIMENT 5-->
+1. DLL advantage over SLL?
+Traversal in both directions
+Easier deletion (no need to track previous node)
+2. Browser history mapping?
+
+DLL is used because:
+
+Back → move to previous node
+Forward → move to next node
+3. Deletion ease in DLL
+
+Node can be deleted using:
+
+prev.next = next
+next.prev = prev
+
+No need to traverse to find previous.
+
+<!--EXPERIMENT 5-->
+1. Why stack is ideal here?
+
+Because stack follows LIFO, which matches bracket matching:
+Last opened → first closed.
+
+2. What fails in "([)]"?
+
+Order is wrong:
+
+( matches ) but [ is inside → mismatch
+Stack detects incorrect pairing.
+3. Underflow meaning
+
+Trying to pop/remove from empty stack or queue
+
+<!--EXPERIMENT 6-->
+1. BFS uses queue?
+
+Because BFS processes nodes level by level, using FIFO order.
+
+2. FIFO meaning?
+
+First In First Out
+First inserted element is removed first.
+
+3. Scheduling example?
+CPU scheduling
+Print queue
+Ticket booking system
+
+<!--EXPERIMENT 7-->
+1. Node structure
+
+A node contains:
+
+data → value
+pointer/reference → address of next (and prev in DLL)
+
+Example:
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
